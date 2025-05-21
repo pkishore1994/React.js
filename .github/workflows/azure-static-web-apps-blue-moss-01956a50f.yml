@@ -8,7 +8,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
 - name: Build and Deploy App
   uses: azure/static-web-apps-deploy@v1
   with:
@@ -17,8 +16,6 @@ on:
     action: "upload"
     app_location: "."                 # root directory
     output_location: "build"          # where React builds to
-
-
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
